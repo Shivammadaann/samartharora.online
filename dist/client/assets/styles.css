@@ -831,6 +831,7 @@ img { display: block; max-width: 100%; }
     display: flex;
     flex-direction: column;
     align-items: center;
+    transform: translateY(clamp(24px, 4svh, 36px));
   }
   .hero-kicker { justify-content: center; }
   .hero-title {
