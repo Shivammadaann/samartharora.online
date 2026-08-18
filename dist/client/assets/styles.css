@@ -799,13 +799,48 @@ img { display: block; max-width: 100%; }
   .menu-open .site-nav { opacity: 1; pointer-events: auto; transform: translateY(0); }
   .site-nav a { padding: 7px 0; font-family: var(--display); font-size: clamp(2rem, 11vw, 3.25rem); font-weight: 800; letter-spacing: -0.05em; line-height: 1.05; text-transform: none; }
   .site-nav a::after { display: none; }
-  .hero { min-height: 760px; background: var(--ink); color: #fff; }
-  .hero-media img { object-position: 73% center; }
-  .hero-media::after { background: linear-gradient(180deg, rgba(16, 16, 16, 0.22), transparent 34%, rgba(16, 16, 16, 0.88) 83%, #101010), linear-gradient(90deg, transparent, rgba(16, 16, 16, 0.08)); }
-  .hero-inner { min-height: 760px; padding-top: 120px; padding-bottom: 48px; align-items: flex-end; }
-  .hero-copy { width: 100%; padding: 0 0 16px; }
-  .hero-title { margin-top: 42px; font-size: clamp(4.1rem, 20vw, 5.5rem); transform: rotate(-1deg); }
-  .hero-subtitle { max-width: 330px; margin-top: 24px; font-size: 1.05rem; }
+  .hero {
+    min-height: 100svh;
+    isolation: isolate;
+    background: var(--ink);
+    color: #fff;
+  }
+  .hero-media {
+    position: fixed;
+    height: 100svh;
+    pointer-events: none;
+  }
+  .hero-media img { object-position: center; }
+  .hero-media::after {
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.62)),
+      radial-gradient(circle at 50% 48%, transparent 16%, rgba(0, 0, 0, 0.2) 100%);
+  }
+  .hero-inner {
+    min-height: 100svh;
+    padding-top: calc(var(--header-height) + 34px);
+    padding-bottom: 34px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .hero-copy {
+    width: min(100%, 390px);
+    margin: 0 auto;
+    padding: 24px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-kicker { justify-content: center; }
+  .hero-title {
+    margin-top: 32px;
+    font-size: clamp(3.75rem, 18vw, 5rem);
+    transform: rotate(-1deg);
+    transform-origin: center;
+  }
+  .hero-subtitle { max-width: 330px; margin: 24px auto 0; font-size: 1.05rem; }
+  .hero-actions { width: 100%; justify-content: center; }
   .hero-index { display: none; }
   .hero-actions .button { border-color: var(--line-light); }
   .hero-actions .button-dark { background: var(--paper-bright); color: var(--ink); }
