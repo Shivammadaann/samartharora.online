@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shivammadaann.github.io/samartharora.online/sitemap.xml
+Sitemap: https://samartharora.online/sitemap.xml
